@@ -1,0 +1,85 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>
+    <link rel="stylesheet" href="1.css">   
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Fish Education</title>  
+</head>  
+<body>
+    <div class="header">
+        <img src="icon/fish.png" width="80px" height="80px"><h1>Fish Education</h1>
+      </div>
+      <div class="topnav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="courseware.html">Courseware</a>
+        <a href="enquiry.html">Enquiry</a>
+        <a href="project.html">Project</a>
+        <div class="dropdown" style="float:right">  
+            <button onclick="toggleDropdown()" class="dropbtn">More</button>  
+            <div id="myDropdown" class="dropdown-content">  
+              <a href="login.html">Login</a>  
+              <a href="register.html">Register</a>
+              <a href="tool.html">Small tools</a>    
+            </div>  
+        </div>
+    </div>
+    <h1>Simple calculator</h1>
+    <div class="calculator">
+        <table>
+            <tr>
+                <td colspan="5"><input type="text" class="result" disabled="disabled"></td>
+            </tr>
+            <tr>
+                <td><button value="7" class="button">7</button></td>
+                <td><button value="8" class="button">8</button></td>
+                <td><button value="9" class="button">9</button></td>
+                <td><button class="del-button ac">AC</button></td>
+                <td><button class="del-button c">C</button></td>
+            </tr>
+            <tr>
+                <td><button value="4" class="button">4</button></td>
+                <td><button value="5" class="button">5</button></td>
+                <td><button value="6" class="button">6</button></td>
+                <td><button value="-" class="operator">-</button></td>
+                <td><button value="*" class="operator">*</button></td>
+            </tr>
+            <tr>
+                <td><button value="1" class="button">1</button></td>
+                <td><button value="2" class="button">2</button></td>
+                <td><button value="3" class="button">3</button></td>
+                <td rowspan="2"><button value="+" class="add operator">+</button></td>
+                <td><button value="/" class="operator">/</button></td>
+            </tr>
+            <tr>
+                <td><button value="0" class="button">0</button></td>
+                <td><button value="." class="button">.</button></td>
+                <td><button value="00" class="button">00</button></td>
+                <td><button class="equal-button">=</button></td>
+            </tr>
+        </table>
+    </div>
+<hr>
+    <h1>TO DO List</h1>    
+    <div id="addDiv">
+        <input type="text">
+        <button>addDiv</button>
+    </div>
+    <div id="container6">
+        <div id="todo">
+            <h2>to-do List</h2>
+        </div>
+        <div id="done">
+            <h2>Done</h2>
+        </div>
+    </div>
+    <div class="footer">         
+        <h3>Copyright Information&copy; 2024 Fish Education <br>Website
+            Contact information: 844735617@qq.com |Phone: 114-514-9999 by Zekrom</h3>
+          </div>
+</body>
+<script src="tool.js"></script>
+<script src="cart.js"></script>
+</html>
+  
