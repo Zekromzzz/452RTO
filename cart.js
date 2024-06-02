@@ -35,24 +35,26 @@ let cart = {
     }  
   }  
     
-  function updateCart() {  
+ function updateCart() {  
     let cartHtml = '';  
     cart.totalItems = 0;  
     cart.totalPrice = 0;  
     for (let itemId in cart.items) {  
-      let item = cart.items[itemId];  
+      let item = cart.items[itemId];
+      let itemTotalPrice = item.price * item.quantity;  
       cartHtml += `<div class="cart-item">  
         <span>${item.name}</span>  
         <div class="cart-item-quantity-wrapper">  
           <button onclick="updateQuantity('${itemId}', ${item.quantity - 1})" class="cart-item-quantity-button">-</button>  
           <input type="number" class="cart-item-quantity-input" value="${item.quantity}" min="1" onchange="updateQuantity('${itemId}', this.value)">  
           <button onclick="updateQuantity('${itemId}', ${item.quantity + 1})" class="cart-item-quantity-button">+</button>  
-        </div>  
-        <span class="cart-item-price">A$${item.price}</span>  
+        </div>
+        <span class="cart-item-price">Price:A$${item.price}</span>   
+        <span class="cart-item-price">Total:A$${itemTotalPrice}</span>  
         <button onclick="removeFromCart('${itemId}')">remove</button>  
       </div>`;  
-      cart.totalItems += item.quantity;  
-      cart.totalPrice += item.price * item.quantity;  
+      cart.totalItems += item.quantity;    
+      cart.totalPrice += itemTotalPrice; 
     }  
     document.getElementById('cart-items').innerHTML = cartHtml;  
     document.getElementById('cart-total-items').textContent = cart.totalItems;  
