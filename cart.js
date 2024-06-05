@@ -35,7 +35,7 @@ let cart = {
     }  
   }  
     
- function updateCart() {  
+  function updateCart() {  
     let cartHtml = '';  
     cart.totalItems = 0;  
     cart.totalPrice = 0;  
@@ -97,7 +97,13 @@ function registerUser() {
 
   //Jump to login page  
   window.location.href = 'login.html';  
-}  
+}
+
+function setLoginStatus(isLoggedIn) {  
+  // Using LocalStorage to Store Login Status  
+  localStorage.setItem('isLoggedIn', isLoggedIn ? 'true' : 'false');  
+}
+
 // validate logon Form Validation 
 function loginUser() {  
   var username = document.getElementById('username').value;  
@@ -105,14 +111,17 @@ function loginUser() {
 
   //Check if there is a corresponding username and password in localStorage  
   if (localStorage.getItem('username') === username && localStorage.getItem('password') === password)  {  
-      // Login successful, redirect to shopping page 
+      // Login successful, redirect to shopping page
+      setLoginStatus(true); 
       window.location.href = 'courseware.html';  
   } else {  
       // Login failed, display error message or return to registration page error handling 
       alert('Login failed. Please register.');  
       window.location.href = 'register.html';  
   }  
-} 
+}
+
+
 // Dropdown navigation menu  
 function toggleDropdown() {  
   document.getElementById("myDropdown").classList.toggle("show");  
