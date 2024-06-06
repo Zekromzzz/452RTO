@@ -141,6 +141,26 @@ function checkLoginStatus() {
         window.location.href = 'login.html';   
     }  
 }  
+function setSessionTimeout(minutes) {  
+  // Add the current time to the specified number of minutes to obtain the session timeout time 
+  var sessionEndTime = new Date().getTime() + minutes * 60 * 1000;  
+    
+  // Check if the session has timed out at regular intervals  
+  setInterval(function() {  
+    var now = new Date().getTime();  
+    if (now >= sessionEndTime) {  
+      // Session has timed out, log out of user or perform other actions 
+      localStorage.setItem('isLoggedIn', 'false');  
+      alert('Session timed out. Please log in again.');  
+      // You can redirect to the login page or perform other logic  
+      window.location.href = 'login.html';  
+    }  
+  }, 1000 * 60); // Check every minute
+}  
+  
+// Call this function to set the session timeout after the user logs in successfully  
+// Setting the session timeout to 30 minutes  
+setSessionTimeout(10);
 
 // Close the dropdown menu, if the user clicks on a dropdown button outside of the dropdown menu 
 window.onclick = function(event) {  
